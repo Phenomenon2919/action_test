@@ -1,0 +1,13 @@
+name: install python
+on: [push]
+jobs:
+  check-python-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up python 3
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.6.9
+      - name: Check version
+        run: python --version
